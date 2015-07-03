@@ -1,0 +1,23 @@
+{
+  "name": "authservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "compression": "^1.5.0",
+    "crypto": "0.0.3",
+    "express": "^4.13.0",
+    "jsonwebtoken": "^5.0.2",
+    "lodash": "^3.10.0",
+    "morgan": "^1.6.0",
+    "passport": "^0.2.2",
+    "path": "^0.11.14",
+    "requestify": "^0.1.17"
+  }
+}
