@@ -12,25 +12,33 @@ var handleError = function(res, err){
 
 exports.login = function(req,res){
 
-    userService.getUser(req.body._id).then(function(response){
+    var query = {email: req.body.email};
 
-        var user = response.body;
+    userService.searchUser(query).then(function(response){
 
-        if(user.hashedPassword && req.body.password &&
-            user.hashedPassword === authHelper.encryptPassword(req.body.password,req.body.salt)){
+        var users = JSON.parse(response.body);
+        if(users && users.length > 0){
+            var user = users[0];
+            if(user.hashedPassword && req.body.password &&
+                user.hashedPassword === authHelper.encryptPassword(req.body.password, user.salt)){
 
-            var token = authHelper.makeToken(user._id);
-            res.json(200,token);
+                var token = authHelper.makeToken(user._id);
+                res.json(200,{token:token});
 
+            }
+            else{
+
+                handleError(res,JSON.stringify({error:"Credential failure"}));
+
+            }
         }
         else{
-
-            handleError(res,"Credential failure");
-
+            handleError(res,JSON.stringify({error:"No user with this email."}));
         }
 
 
-    }).fail(function(failedRes){
+    })
+    .fail(function(failedRes){
 
         handleError(res, failedRes.body);
 
@@ -64,10 +72,13 @@ exports.signUp = function(req,res){
 
 exports.forgetPassword = function(req,res){
 
+    res.json(500,JSON.stringify({error:"unimplemented"}));
+
 };
 
 exports.changePassword = function(req,res){
 
+    res.json(500,JSON.stringify({error:"unimplemented"}));
 
 };
 

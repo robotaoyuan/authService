@@ -9,6 +9,18 @@ exports.getUser = function(userId){
     return requestify.get(userServiceUrl+"/api/users/"+ userId);
 };
 
+exports.searchUser = function(query){
+
+    var url = userServiceUrl+"/api/users?";
+
+    for(var key in query){
+
+        url = url + key + '=' + query[key];
+    }
+
+    return requestify.get(url);
+}
+
 exports.createUser = function(userObj){
 
     return requestify.post(userServiceUrl+"/api/users/",userObj);
