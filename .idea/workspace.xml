@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da3cffcc-64e6-43fe-8f12-c33ceb7484b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/userAuth/user.service.js" afterPath="$PROJECT_DIR$/api/userAuth/user.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/userAuth/userAuth.controller.js" afterPath="$PROJECT_DIR$/api/userAuth/userAuth.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="authservice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userAuth.controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userAuth.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/userAuth/userAuth.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3773585">
+            <state vertical-scroll-proportion="0.0">
               <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.023584906">
+              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -63,6 +73,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/api/userAuth/userAuth.controller.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -240,8 +251,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/userAuth/userAuth.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3773585">
+        <state vertical-scroll-proportion="0.0">
           <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.023584906">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
           <folding />
         </state>
       </provider>
