@@ -14,10 +14,11 @@ var app = express();
 app.use(compression());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(morgan('dev'));
 var server = require('http').createServer(app);
 
 require('./routes')(app);
+
 
 server.listen(config.port, config.ip, function () {
     console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));

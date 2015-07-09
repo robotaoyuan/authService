@@ -19,8 +19,7 @@ exports.login = function(req,res){
         var users = JSON.parse(response.body);
         if(users && users.length > 0){
             var user = users[0];
-            if(user.hashedPassword && req.body.password &&
-                user.hashedPassword === authHelper.encryptPassword(req.body.password, user.salt)){
+            if(user.hashedPassword && req.body.password && user.hashedPassword === authHelper.encryptPassword(req.body.password, user.salt)){
 
                 var token = authHelper.makeToken(user._id);
                 res.json(200,{token:token});
@@ -78,8 +77,44 @@ exports.forgetPassword = function(req,res){
 
 exports.changePassword = function(req,res){
 
-    res.json(500,JSON.stringify({error:"unimplemented"}));
 
+    userService.getUser(req.body._id).then(function(response){
+
+        var user = JSON.parse(response.body);
+        if(user.hashedPassword && req.body.oldPassword && user.hashedPassword === authHelper.encryptPassword(req.body.oldPassword, user.salt)){
+
+
+            var userObj = {};
+            userObj.salt = authHelper.makeSalt();
+            userObj.hashedPassword = authHelper.encryptPassword(req.body.newPassword,userObj.salt);
+
+
+            userService.putUser(user._id,userObj).then(function(response){
+                var success = JSON.parse(response.body);
+                res.json(200,success);
+
+            }).fail(function(failedResponse){
+
+                var failed = JSON.parse(failedResponse.body);
+                res.json(200,failed);
+
+            });
+
+
+
+        }
+
+        else{
+            handleError(res,JSON.stringify({error:"Credential error"}));
+        }
+
+
+    })
+    .fail(function(failedRes){
+
+        handleError(res, failedRes.body);
+
+    });
 };
 
 
