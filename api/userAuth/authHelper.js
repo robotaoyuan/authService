@@ -9,6 +9,7 @@ exports.encryptPassword = function(password,salt) {
     return crypto.pbkdf2Sync(password, base64salt, 10000, 64).toString('base64');
 };
 
+
 exports.checkPassword = function(plainTextPwd,hashedPassword,salt){
     return this.encryptPassword(plainTextPwd,salt) === hashedPassword;
 };
